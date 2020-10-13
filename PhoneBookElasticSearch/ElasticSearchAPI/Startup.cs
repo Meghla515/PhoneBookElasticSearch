@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ElasticSearchPersistence.Repository.ElasticSearch;
+using ElasticSearchService.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Nest;
 
 namespace ElasticSearchAPI
 {
@@ -26,8 +29,21 @@ namespace ElasticSearchAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSingleton<IConfiguration>(Configuration);
+            services.AddTransient<IElasticSearchRepository, ElasticSearchRepository>();
+            services.AddTransient<IESService, ESService>();
 
             services.AddSwaggerGen();
+
+            var settings = new ConnectionSettings(new Uri("http://localhost:9200/"))
+                .DefaultIndex("phonebook")
+                .DefaultMappingFor<dynamic>(m => m
+                    .IndexName("phonebook")
+                );
+
+            var client = new ElasticClient(settings);
+
+            services.AddSingleton<IElasticClient>(client);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

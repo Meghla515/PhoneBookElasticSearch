@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElasticSearchAPI", "ElasticSearchAPI\ElasticSearchAPI.csproj", "{821AF054-E0D9-4A62-9B0B-6E18C3EAD928}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElasticSearchPersistence", "ElasticSearchPersistence\ElasticSearchPersistence.csproj", "{BE7C0578-F3F1-47FB-B767-FF66C1AFC803}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElasticSearchService", "ElasticSearchService\ElasticSearchService.csproj", "{823D442E-8D27-4FB2-BD27-D2A05905290F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{821AF054-E0D9-4A62-9B0B-6E18C3EAD928}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{821AF054-E0D9-4A62-9B0B-6E18C3EAD928}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{821AF054-E0D9-4A62-9B0B-6E18C3EAD928}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE7C0578-F3F1-47FB-B767-FF66C1AFC803}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE7C0578-F3F1-47FB-B767-FF66C1AFC803}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE7C0578-F3F1-47FB-B767-FF66C1AFC803}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE7C0578-F3F1-47FB-B767-FF66C1AFC803}.Release|Any CPU.Build.0 = Release|Any CPU
+		{823D442E-8D27-4FB2-BD27-D2A05905290F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{823D442E-8D27-4FB2-BD27-D2A05905290F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{823D442E-8D27-4FB2-BD27-D2A05905290F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{823D442E-8D27-4FB2-BD27-D2A05905290F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
