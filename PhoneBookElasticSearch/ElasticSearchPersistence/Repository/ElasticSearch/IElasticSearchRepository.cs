@@ -7,10 +7,10 @@ namespace ElasticSearchPersistence.Repository.ElasticSearch
 {
     public interface IElasticSearchRepository : IDisposable
     {
-        void CreateIndex(string IndexName);
-        void Insert(DocumentModel document);
-        void Update(DocumentModel document);
-        void Delete(DocumentModel document);
-        IEnumerable<dynamic> Search(string searchTerm);
+        void CreateIndex(string index);
+        void Insert(PhoneBook dto);
+        void Update(PhoneBook dto);
+        void Delete(PhoneBook dto);
+        IEnumerable<dynamic> Search(string search);
     }    
 }

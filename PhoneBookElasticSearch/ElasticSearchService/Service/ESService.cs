@@ -3,6 +3,8 @@ using ElasticSearchPersistence.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using ElasticSearchService.DataTransfer.Model;
+using ElasticSearchService.DataTransfer.Mapper;
 
 namespace ElasticSearchService.Service
 {
@@ -14,18 +16,18 @@ namespace ElasticSearchService.Service
             this.repo = repo;
         }
 
-        public void DeleteIndexDocument(DocumentModel documentModel)
+        public void DeleteIndexDocument(PhoneBookDTO dto)
         {
-            repo.CreateIndex(documentModel.IndexName);
+            repo.CreateIndex("phonebook");
 
-            repo.Delete(documentModel);
+            repo.Delete(dto.ToEntity());
         }
 
-        public void InsertIndexDocument(DocumentModel documentModel)
+        public void InsertIndexDocument(PhoneBookDTO dto)
         {
-            repo.CreateIndex(documentModel.IndexName);
+            repo.CreateIndex("phonebook");
 
-            repo.Insert(documentModel);
+            repo.Insert(dto.ToEntity());
         }
 
         public IEnumerable<dynamic> SearchDocuments(string searchTerm)
@@ -33,11 +35,11 @@ namespace ElasticSearchService.Service
             return repo.Search(searchTerm);
         }
 
-        public void UpdateIndexDocument(DocumentModel documentModel)
+        public void UpdateIndexDocument(PhoneBookDTO dto)
         {
-            repo.CreateIndex(documentModel.IndexName);
+            repo.CreateIndex("phonebook");
 
-            repo.Update(documentModel);
+            repo.Update(dto.ToEntity());
         }
     }
 }

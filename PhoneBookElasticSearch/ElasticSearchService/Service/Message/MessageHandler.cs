@@ -35,7 +35,7 @@ namespace ElasticSearchService.Service.Message
                             using (var helper = new ServiceFactory(client))
                             {
                                 var service = helper.esService;
-                                var phonebookDTO = JsonConvert.DeserializeObject<DocumentModel>(data.Payload);
+                                var phonebookDTO = JsonConvert.DeserializeObject<PhoneBookDTO>(data.Payload);
                                 service.DeleteIndexDocument(phonebookDTO);
                             }
                             break;
@@ -43,7 +43,7 @@ namespace ElasticSearchService.Service.Message
                             using (var helper = new ServiceFactory(client))
                             {
                                 var service = helper.esService;
-                                var phonebookDTO = JsonConvert.DeserializeObject<DocumentModel>(data.Payload);
+                                var phonebookDTO = JsonConvert.DeserializeObject<PhoneBookDTO>(data.Payload);
                                 service.InsertIndexDocument(phonebookDTO);
                             }
                             break;
@@ -51,7 +51,7 @@ namespace ElasticSearchService.Service.Message
                             using (var helper = new ServiceFactory(client))
                             {
                                 var service = helper.esService;
-                                var phonebookDTO = JsonConvert.DeserializeObject<DocumentModel>(data.Payload);
+                                var phonebookDTO = JsonConvert.DeserializeObject<PhoneBookDTO>(data.Payload);
                                 service.UpdateIndexDocument(phonebookDTO);
                             }
                             break;

@@ -18,9 +18,9 @@ namespace ElasticSearchAPI.Controllers
             this.service = service;
         }
         [Route("phonebook"), HttpGet]
-        public IActionResult Index(string searchTerm)
+        public IActionResult Search(string search)
         {
-            return Ok(service.SearchDocuments(searchTerm));
+            return Ok(service.SearchDocuments(search));
         }
     }
 }

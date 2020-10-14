@@ -1,4 +1,5 @@
 ﻿using ElasticSearchPersistence.Model;
+using ElasticSearchService.DataTransfer.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,9 +8,9 @@ namespace ElasticSearchService.Service
 {
     public interface IESService
     {
-        void InsertIndexDocument(DocumentModel document);
-        void UpdateIndexDocument(DocumentModel document);
-        void DeleteIndexDocument(DocumentModel document);
-        IEnumerable<dynamic> SearchDocuments(string searchTerm);
+        void InsertIndexDocument(PhoneBookDTO dto);
+        void UpdateIndexDocument(PhoneBookDTO dto);
+        void DeleteIndexDocument(PhoneBookDTO dto);
+        IEnumerable<dynamic> SearchDocuments(string search);
     }
 }

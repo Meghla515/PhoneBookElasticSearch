@@ -13,8 +13,4 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\ElasticSearchPersistence\ElasticSearchPersistence.csproj" />
 	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="DataTransfer\Mapper\" />
-	</ItemGroup>
 </Project>

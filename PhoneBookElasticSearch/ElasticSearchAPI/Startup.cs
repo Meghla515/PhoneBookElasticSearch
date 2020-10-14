@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ElasticSearchPersistence.Model;
 using ElasticSearchPersistence.Repository.ElasticSearch;
 using ElasticSearchService.Service;
 using Microsoft.AspNetCore.Builder;
@@ -36,10 +37,13 @@ namespace ElasticSearchAPI
             services.AddSwaggerGen();
 
             var settings = new ConnectionSettings(new Uri("http://localhost:9200/"))
-                .DefaultIndex("phonebook")
-                .DefaultMappingFor<dynamic>(m => m
+                .DefaultMappingFor<PhoneBook>(m => m
                     .IndexName("phonebook")
-                );
+                    .IdProperty(p => p.id)
+                )
+                .EnableDebugMode()
+                .PrettyJson()
+                .RequestTimeout(TimeSpan.FromMinutes(2));
 
             var client = new ElasticClient(settings);
 
