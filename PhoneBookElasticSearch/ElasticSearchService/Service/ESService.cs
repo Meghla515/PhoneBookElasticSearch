@@ -18,15 +18,11 @@ namespace ElasticSearchService.Service
 
         public void DeleteIndexDocument(PhoneBookDTO dto)
         {
-            repo.CreateIndex("phonebook");
-
             repo.Delete(dto.ToEntity());
         }
 
         public void InsertIndexDocument(PhoneBookDTO dto)
         {
-            repo.CreateIndex("phonebook");
-
             repo.Insert(dto.ToEntity());
         }
 
@@ -37,8 +33,6 @@ namespace ElasticSearchService.Service
 
         public void UpdateIndexDocument(PhoneBookDTO dto)
         {
-            repo.CreateIndex("phonebook");
-
             repo.Update(dto.ToEntity());
         }
     }

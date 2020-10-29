@@ -37,13 +37,10 @@ namespace ElasticSearchAPI
             services.AddSwaggerGen();
 
             var settings = new ConnectionSettings(new Uri("http://localhost:9200/"))
-                .DefaultMappingFor<PhoneBook>(m => m
-                    .IndexName("phonebook")
-                    .IdProperty(p => p.id)
-                )
-                .EnableDebugMode()
-                .PrettyJson()
-                .RequestTimeout(TimeSpan.FromMinutes(2));
+                           .DefaultIndex("phonebook")
+                           .DefaultMappingFor<PhoneBook>(i => i
+                               .IndexName("phonebook")
+                           );
 
             var client = new ElasticClient(settings);
 

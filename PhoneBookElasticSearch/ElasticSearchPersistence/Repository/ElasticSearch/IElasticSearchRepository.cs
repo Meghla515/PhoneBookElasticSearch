@@ -7,7 +7,6 @@ namespace ElasticSearchPersistence.Repository.ElasticSearch
 {
     public interface IElasticSearchRepository : IDisposable
     {
-        void CreateIndex(string index);
         void Insert(PhoneBook dto);
         void Update(PhoneBook dto);
         void Delete(PhoneBook dto);
