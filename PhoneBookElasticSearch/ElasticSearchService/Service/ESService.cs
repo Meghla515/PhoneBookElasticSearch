@@ -16,22 +16,22 @@ namespace ElasticSearchService.Service
             this.repo = repo;
         }
 
-        public void DeleteIndexDocument(PhoneBookDTO dto)
+        public void DeletePhonebook(PhoneBookDTO dto)
         {
             repo.Delete(dto.ToEntity());
         }
 
-        public void InsertIndexDocument(PhoneBookDTO dto)
+        public void InsertPhonebook(PhoneBookDTO dto)
         {
             repo.Insert(dto.ToEntity());
         }
 
-        public IEnumerable<dynamic> SearchDocuments(string searchTerm)
+        public IEnumerable<dynamic> SearchPhonebook(string searchTerm)
         {
             return repo.Search(searchTerm);
         }
 
-        public void UpdateIndexDocument(PhoneBookDTO dto)
+        public void UpdatePhonebook(PhoneBookDTO dto)
         {
             repo.Update(dto.ToEntity());
         }

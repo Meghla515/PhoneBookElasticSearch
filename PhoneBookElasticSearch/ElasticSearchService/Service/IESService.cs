@@ -8,9 +8,9 @@ namespace ElasticSearchService.Service
 {
     public interface IESService
     {
-        void InsertIndexDocument(PhoneBookDTO dto);
-        void UpdateIndexDocument(PhoneBookDTO dto);
-        void DeleteIndexDocument(PhoneBookDTO dto);
-        IEnumerable<dynamic> SearchDocuments(string search);
+        void InsertPhonebook(PhoneBookDTO dto);
+        void UpdatePhonebook(PhoneBookDTO dto);
+        void DeletePhonebook(PhoneBookDTO dto);
+        IEnumerable<dynamic> SearchPhonebook(string search);
     }
 }

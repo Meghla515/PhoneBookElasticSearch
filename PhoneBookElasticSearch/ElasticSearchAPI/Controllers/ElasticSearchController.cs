@@ -20,7 +20,7 @@ namespace ElasticSearchAPI.Controllers
         [Route("phonebook"), HttpGet]
         public IActionResult Search(string search)
         {
-            return Ok(service.SearchDocuments(search));
+            return Ok(service.SearchPhonebook(search));
         }
     }
 }

@@ -36,7 +36,7 @@ namespace ElasticSearchService.Service.Message
                             {
                                 var service = helper.esService;
                                 var phonebookDTO = JsonConvert.DeserializeObject<PhoneBookDTO>(data.Payload);
-                                service.DeleteIndexDocument(phonebookDTO);
+                                service.DeletePhonebook(phonebookDTO);
                             }
                             break;
                         case "phonebookCreated":
@@ -44,7 +44,7 @@ namespace ElasticSearchService.Service.Message
                             {
                                 var service = helper.esService;
                                 var phonebookDTO = JsonConvert.DeserializeObject<PhoneBookDTO>(data.Payload);
-                                service.InsertIndexDocument(phonebookDTO);
+                                service.InsertPhonebook(phonebookDTO);
                             }
                             break;
                         case "phonebookUpdated":
@@ -52,7 +52,7 @@ namespace ElasticSearchService.Service.Message
                             {
                                 var service = helper.esService;
                                 var phonebookDTO = JsonConvert.DeserializeObject<PhoneBookDTO>(data.Payload);
-                                service.UpdateIndexDocument(phonebookDTO);
+                                service.UpdatePhonebook(phonebookDTO);
                             }
                             break;
                         default:
